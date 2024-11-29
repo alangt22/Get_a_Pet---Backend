@@ -24,7 +24,7 @@ app.use("/users", UserRoutes);
 app.use("/pets", PetRoutes);
 
 // Configuração da porta
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5136;
 
 app.listen(PORT, function() {
   console.log(`Servidor Online na porta ${PORT}!`);
