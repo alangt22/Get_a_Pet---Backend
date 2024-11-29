@@ -5,7 +5,7 @@ const app = express();
 // Configuração do CORS para permitir origens específicas
 app.use(cors({
   origin: 'https://get-a-pet-aln.netlify.app', // Seu frontend de produção
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,  // Caso precise enviar cookies ou autenticação via headers
 }));
