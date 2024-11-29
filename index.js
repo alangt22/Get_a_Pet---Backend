@@ -5,7 +5,7 @@ const app = express();
 // Configuração do CORS
 app.use(cors({
   credentials: true,
-  origin: "http://localhost:5173"
+  origin: "https://getapet-backend-production.up.railway.app/"
 }));
 
 // Configuração para resposta em JSON
