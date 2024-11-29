@@ -5,7 +5,7 @@ const app = express();
 // Configuração do CORS
 app.use(cors({
   credentials: true,
-  origin: "https://getapet-backend-production.up.railway.app/"
+  origin: "https://get-a-pet-aln.netlify.app"  // Corrigido para remover a barra final
 }));
 
 // Configuração para resposta em JSON
