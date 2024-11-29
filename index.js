@@ -7,7 +7,7 @@ const app = express()
 app.use(express.json())
 
 // solve cors
-app.use(cors({credentials: true, origin: 'https://getapet-backend-production.up.railway.app/'}))
+app.use(cors({credentials: true, origin: 'http://localhost:5000'}))
 
 // public folder for images
 app.use(express.static('public'))
