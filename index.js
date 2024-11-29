@@ -5,9 +5,12 @@ const app = express();
 
 // Configuração do CORS para permitir origens específicas
 app.use(cors({
-  credentials: true,
-  origin: ['https://get-a-pet-aln.netlify.app', 'http://localhost:5136']  // Permite tanto a origem de produção quanto o localhost
+  origin: 'https://get-a-pet-aln.netlify.app/', // Substitua pelo seu frontend de produção, se necessário
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+
 
 // Configuração para resposta em JSON
 app.use(express.json());
