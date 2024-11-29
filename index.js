@@ -1,33 +1,23 @@
-const express = require("express");
-const cors = require("cors");
-const app = express();
+const express = require('express')
+const cors = require('cors')
 
-// Configuração do CORS
-app.use(cors({
-  credentials: true,
-  origin: "https://get-a-pet-aln.netlify.app"  // Corrigido para remover a barra final
-}));
+const app = express()
 
-// Configuração para resposta em JSON
-app.use(express.json());
+// config JSON response
+app.use(express.json())
 
-// Conexão com o banco de dados
-// Se você tiver uma função de conexão com banco de dados, pode colocá-la aqui, por exemplo:
-// const conn = require("./db/conn.js");
-// conn();
+// solve cors
+app.use(cors({credentials: true, origin: 'https://getapet-backend-production.up.railway.app/'}))
 
-// Rotas
-const UserRoutes = require("./routes/UserRoutes");
-const PetRoutes = require("./routes/PetRoutes");
+// public folder for images
+app.use(express.static('public'))
 
-app.use("/users", UserRoutes);
-app.use("/pets", PetRoutes);
+//routes
+const UserRoutes = require('./routes/UserRoutes')
+const PetRoutes = require('./routes/PetRoutes')
 
-// Configuração da porta
-const PORT = process.env.PORT || 5136;
+app.use('/users', UserRoutes )
+app.use('/pets', PetRoutes )
 
-app.listen(PORT, function() {
-  console.log(`Servidor Online na porta ${PORT}!`);
-});
 
-module.exports = app;
+app.listen(5000)
